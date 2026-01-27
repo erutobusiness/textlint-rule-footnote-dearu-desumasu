@@ -1,0 +1,40 @@
+{
+  "name": "textlint-rule-footnote-dearu-desumasu",
+  "version": "1.0.0",
+  "description": "textlint rule to check mixed writing style (dearu/desumasu) in footnotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "keywords": [
+    "textlint",
+    "textlint-rule",
+    "footnote",
+    "dearu",
+    "desumasu",
+    "japanese"
+  ],
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu.git"
+  },
+  "dependencies": {
+    "analyze-desumasu-dearu": "^4.0.0"
+  },
+  "devDependencies": {
+    "@textlint/kernel": "^15.5.1",
+    "@textlint/textlint-plugin-markdown": "^15.5.1",
+    "mocha": "^10.0.0",
+    "textlint-tester": "^13.0.0",
+    "textlint": "^13.0.0"
+  },
+  "peerDependencies": {
+    "textlint": ">=13.0.0"
+  }
+}
