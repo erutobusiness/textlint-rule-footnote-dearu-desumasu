@@ -1,0 +1,1 @@
+# textlint-rule-footnote-dearu-desumasu
