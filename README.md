@@ -1,22 +1,12 @@
-# 📝 textlint-rule-footnote-dearu-desumasu
+# textlint-rule-footnote-dearu-desumasu
 
-[![Test](https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu/actions/workflows/test.yml/badge.svg)](https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu/actions/workflows/test.yml)
-[![npm version](https://badge.fury.io/js/textlint-rule-footnote-dearu-desumasu.svg)](https://badge.fury.io/js/textlint-rule-footnote-dearu-desumasu)
+[![npm](https://img.shields.io/npm/v/textlint-rule-footnote-dearu-desumasu.svg)](https://www.npmjs.com/package/textlint-rule-footnote-dearu-desumasu)
+[![test](https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu/actions/workflows/test.yml/badge.svg)](https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A textlint rule that checks strict Dearu/Desumasu style specifically within footnotes.
+textlint rule to check mixed writing style (Dearu/Desumasu) in footnotes.
 
-## Features
-
-- 🛡️ **Footnote Specific**: Checks writing style *only* inside footnotes.
-- 🇯🇵 **Japanese Style Support**: Detects mixed "Dearu" and "Desumasu" styles.
-- ⚙️ **Configurable**: Choose your preferred style (`"prefer": "ですます"` or `"である"`).
-
-## Practical Use Case
-
-In Japanese technical writing, it is common to use **"Dearu" style (da/de-aru)** for the main text. However, footnotes are sometimes written in **"Desumasu" style (desu/masu)** depending on the style guide.
-
-This rule specifically targets footnotes to ensure consistency within them, independent of the main text's style.
+This rule enforces a consistent writing style ("Desumasu" or "Dearu") specifically within footnotes, independently of the main text.
 
 ## Installation
 
@@ -26,13 +16,54 @@ npm install textlint-rule-footnote-dearu-desumasu
 
 ## Usage
 
-Via `.textlintrc`(Recommended):
+Add this rule to your `.textlintrc` (or `.textlintrc.json`).
+
+```json
+{
+    "rules": {
+        "footnote-dearu-desumasu": true
+    }
+}
+```
+
+## Configuration
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `prefer` | `"ですます"` \| `"である"` | `"ですます"` | Preferred style in footnotes. |
+
+### Example
+
+To prefer "Dearu" style in footnotes:
 
 ```json
 {
     "rules": {
         "footnote-dearu-desumasu": {
-             // "ですます" (default) or "である"
+            "prefer": "である"
+        }
+    }
+}
+```
+
+## Recommended Combination
+
+It is highly recommended to use this rule together with [textlint-filter-rule-footnote](https://github.com/erutobusiness/textlint-filter-rule-footnote).
+
+This combination allows you to:
+1.  Ignore global rules (like main text style) inside footnotes using the filter rule.
+2.  Enforce strict "Dearu/Desumasu" style inside footnotes using this rule.
+
+**Example `.textlintrc`:**
+
+```json
+{
+    "filters": {
+        "footnote": true
+    },
+    "rules": {
+        "preset-ja-technical-writing": true,
+        "footnote-dearu-desumasu": {
             "prefer": "ですます"
         }
     }
@@ -43,22 +74,21 @@ Via `.textlintrc`(Recommended):
 
 Contributions are welcome!
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu.git
-   cd textlint-rule-footnote-dearu-desumasu
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Run tests & lint:
-   ```bash
-   npm test
-   npm run check
-   ```
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu.git
+    cd textlint-rule-footnote-dearu-desumasu
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Run tests & lint:
+    ```bash
+    npm test
+    npm run lint
+    npm run format
+    ```
 
 ## License
 
