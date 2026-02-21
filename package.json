@@ -26,6 +26,9 @@
     "type": "git",
     "url": "git+https://github.com/erutobusiness/textlint-rule-footnote-dearu-desumasu.git"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "analyze-desumasu-dearu": "^4.0.0"
   },
