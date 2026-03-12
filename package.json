@@ -1,6 +1,6 @@
 {
   "name": "textlint-rule-footnote-dearu-desumasu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "textlint rule to check mixed writing style (dearu/desumasu) in footnotes",
   "main": "index.js",
   "scripts": {

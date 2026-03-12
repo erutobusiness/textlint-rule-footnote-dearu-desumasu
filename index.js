@@ -150,8 +150,10 @@ module.exports = function footnoteDesumasuDearu(
   });
 
   return {
-    // 注釈定義 (e.g., [^footnote]: 内容)
-    [Syntax.FootnoteDefinition](node) {
+    // Use literal string: Syntax.FootnoteDefinition is undefined in
+    // @textlint/ast-node-types because footnoteDefinition is a remark-gfm
+    // extension, not part of the core AST spec.
+    footnoteDefinition(node) {
       const text = getSource(node);
       footnoteChecker.check(node, text);
     },
