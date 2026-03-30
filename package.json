@@ -4,7 +4,7 @@
   "description": "textlint rule to check mixed writing style (dearu/desumasu) in footnotes",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "vitest run",
     "lint": "biome check .",
     "format": "biome check --write ."
   },
@@ -36,9 +36,9 @@
     "@biomejs/biome": "^2.3.13",
     "@textlint/kernel": "^15.5.1",
     "@textlint/textlint-plugin-markdown": "^15.5.1",
-    "mocha": "^10.0.0",
     "textlint": "^13.0.0",
-    "textlint-tester": "^13.0.0"
+    "textlint-tester": "^13.0.0",
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "textlint": ">=13.0.0"

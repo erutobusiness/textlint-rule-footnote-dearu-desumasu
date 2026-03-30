@@ -27,7 +27,7 @@ describe("textlint-rule-footnote-dearu-desumasu", () => {
     });
   };
 
-  context("default (prefer: ですます)", () => {
+  describe("default (prefer: ですます)", () => {
     it("should not report when footnote uses desumasu", async () => {
       const text = `本文はである調である。脚注[^1]
 
@@ -53,7 +53,7 @@ describe("textlint-rule-footnote-dearu-desumasu", () => {
     });
   });
 
-  context("prefer: である", () => {
+  describe("prefer: である", () => {
     it("should not report when footnote uses dearu", async () => {
       const text = `本文です。脚注[^1]
 
@@ -79,7 +79,7 @@ describe("textlint-rule-footnote-dearu-desumasu", () => {
     });
   });
 
-  context("body text should be ignored", () => {
+  describe("body text should be ignored", () => {
     it("should not report dearu in body text", async () => {
       const text = `本文はである調である。
 
